@@ -10,4 +10,5 @@ compile_commands.json
 CTestTestfile.cmake
 _deps
 infoarena_arhiva_educationala
+infoarena_arhiva_educationala.cbp
 .idea/
