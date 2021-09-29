@@ -1,3 +1,4 @@
+#include <climits>
 //
 // Created by Andrei Covaci on 21.09.2021.
 // https://infoarena.ro/problema/permutari
@@ -81,7 +82,7 @@ int solve(int n) {
     return 0;
 }
 
-void print(int n) {
+void print(__unused int n) {
 }
 
 #endif //INFOARENA_ARHIVA_EDUCATIONALA_011_PERMUTARI_H

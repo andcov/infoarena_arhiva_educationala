@@ -1,3 +1,4 @@
+#include <climits>
 //
 // Created by Andrei Covaci on 29.09.2021.
 // https://infoarena.ro/problema/heapuri
@@ -105,7 +106,7 @@ int read() {
     return 0;
 }
 
-vector<int> solve(int w) {
+vector<int> solve(__unused int w) {
     ifstream in(INPUT);
 
     vector<int> res, hist;

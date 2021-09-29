@@ -24,7 +24,7 @@ pair<long long, int> read() {
     in >> a >> b;
 
     in.close();
-    return pair<long long, int>(a, b);
+    return make_pair(a, b);
 }
 
 

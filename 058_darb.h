@@ -1,3 +1,4 @@
+#include <climits>
 //
 // Created by Andrei Covaci on 29.09.2021.
 // https://infoarena.ro/problema/darb
@@ -60,7 +61,7 @@ pair<int, int> dfs(int no, int len) {
     return make_pair(maxv, maxn);
 }
 
-int solve(int q) {
+int solve(__unused int q) {
     for(int i = 0; i <= n; ++i) {
         vis[i] = false;
     }

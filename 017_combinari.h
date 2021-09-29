@@ -1,3 +1,4 @@
+#include <climits>
 //
 // Created by Andrei Covaci on 23.09.2021.
 // https://infoarena.ro/problema/combinari
@@ -64,7 +65,7 @@ int solve(pair<vector<int>, int> x) {
     return 0;
 }
 
-void print(int c) {
+void print(__unused int c) {
 }
 
 #endif //INFOARENA_ARHIVA_EDUCATIONALA_017_COMBINARI_H
