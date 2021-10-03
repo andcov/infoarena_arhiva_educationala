@@ -1,4 +1,3 @@
-#include <climits>
 //
 // Created by Andrei Covaci on 29.09.2021.
 // https://infoarena.ro/problema/heapuri
@@ -10,7 +9,9 @@
 #include <fstream>
 #include <iostream>
 #include <vector>
+#include <unordered_set>
 #include <cmath>
+#include <climits>
 
 //#define INPUT "heapuri.in"
 //#define OUTPUT "heapuri.out"
@@ -63,44 +64,45 @@ void remove_top() {
         swap(heap[len], heap[len / 2]);
 }
 
-void remove(int ele) {
-    int pos = 1;
-    for(; pos <= len; ++pos) if (heap[pos] == ele) break;
-
-    if (pos == len + 1) return;
-    if (pos == len) { len--; return; }
-    if (pos == 1) { remove_top(); return; }
-
-    heap[pos] = heap[len];
-    --len;
-
-    if (heap[pos] < heap[pos / 2]) {
-        while(pos > 1) {
-            if(heap[pos / 2] > heap[pos]) {
-                swap(heap[pos / 2], heap[pos]);
-                pos /= 2;
-            } else {
-                break;
-            }
-        }
-    } else if (heap[pos] > heap[pos * 2] || heap[pos] > heap[pos * 2 + 1]) {
-        while(pos <= (len - 1) / 2) {
-            if(heap[pos * 2] < heap[pos * 2 + 1] && heap[pos * 2] < heap[pos]) {
-                swap(heap[pos], heap[pos * 2]);
-                pos *= 2;
-            } else if (heap[pos * 2] >= heap[pos * 2 + 1] && heap[pos * 2 + 1] < heap[pos]) {
-                swap(heap[pos], heap[pos * 2 + 1]);
-                pos = pos * 2 + 1;
-            } else {
-                break;
-            }
-        }
-        if(len % 2 != 0 && heap[len - 1] < heap[len] && heap[len - 1] < heap[len / 2])
-            swap(heap[len - 1], heap[len / 2]);
-        else if (heap[len] < heap[len / 2])
-            swap(heap[len], heap[len / 2]);
-    }
-}
+/// Used in previous implementation, no longer needed, but I kept for potential future reference.
+//void remove(int ele) {
+//    int pos = 1;
+//    for(; pos <= len; ++pos) if (heap[pos] == ele) break;
+//
+//    if (pos == len + 1) return;
+//    if (pos == len) { len--; return; }
+//    if (pos == 1) { remove_top(); return; }
+//
+//    heap[pos] = heap[len];
+//    --len;
+//
+//    if (heap[pos] < heap[pos / 2]) {
+//        while(pos > 1) {
+//            if(heap[pos / 2] > heap[pos]) {
+//                swap(heap[pos / 2], heap[pos]);
+//                pos /= 2;
+//            } else {
+//                break;
+//            }
+//        }
+//    } else if (heap[pos] > heap[pos * 2] || heap[pos] > heap[pos * 2 + 1]) {
+//        while(pos <= (len - 1) / 2) {
+//            if(heap[pos * 2] < heap[pos * 2 + 1] && heap[pos * 2] < heap[pos]) {
+//                swap(heap[pos], heap[pos * 2]);
+//                pos *= 2;
+//            } else if (heap[pos * 2] >= heap[pos * 2 + 1] && heap[pos * 2 + 1] < heap[pos]) {
+//                swap(heap[pos], heap[pos * 2 + 1]);
+//                pos = pos * 2 + 1;
+//            } else {
+//                break;
+//            }
+//        }
+//        if(len % 2 != 0 && heap[len - 1] < heap[len] && heap[len - 1] < heap[len / 2])
+//            swap(heap[len - 1], heap[len / 2]);
+//        else if (heap[len] < heap[len / 2])
+//            swap(heap[len], heap[len / 2]);
+//    }
+//}
 
 int read() {
     return 0;
@@ -110,6 +112,7 @@ vector<int> solve(__unused int w) {
     ifstream in(INPUT);
 
     vector<int> res, hist;
+    unordered_set<int> removed;
 
     int n, task, val;
     in >> n;
@@ -122,8 +125,11 @@ vector<int> solve(__unused int w) {
             insert(val);
         } else if(task == 2) {
             in >> val;
-            remove(hist[--val]);
+            removed.insert(hist[--val]);
         } else {
+            while(removed.count(peek())) {
+                remove_top();
+            }
             res.emplace_back(peek());
         }
     }
