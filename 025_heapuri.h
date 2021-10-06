@@ -7,7 +7,6 @@
 #define INFOARENA_ARHIVA_EDUCATIONALA_025_HEAPURI_H
 
 #include <fstream>
-#include <iostream>
 #include <vector>
 #include <unordered_set>
 #include <cmath>

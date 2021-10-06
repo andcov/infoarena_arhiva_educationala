@@ -7,7 +7,6 @@
 #define INFOARENA_ARHIVA_EDUCATIONALA_009_DIJKSTRA_H
 
 #include <fstream>
-#include <iostream>
 #include <vector>
 #include <queue>
 #include <unordered_map>

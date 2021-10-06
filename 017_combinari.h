@@ -7,7 +7,6 @@
 #define INFOARENA_ARHIVA_EDUCATIONALA_017_COMBINARI_H
 
 #include <fstream>
-#include <iostream>
 #include <vector>
 #include <climits>
 

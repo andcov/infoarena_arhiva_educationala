@@ -7,7 +7,6 @@
 #define INFOARENA_ARHIVA_EDUCATIONALA_010_CIUR_H
 
 #include <fstream>
-#include <iostream>
 
 //#define INPUT "ciur.in"
 //#define OUTPUT "ciur.out"

@@ -7,7 +7,6 @@
 #define INFOARENA_ARHIVA_EDUCATIONALA_012_LGPUT_H
 
 #include <fstream>
-#include <iostream>
 #include <vector>
 
 //#define INPUT "lgput.in"

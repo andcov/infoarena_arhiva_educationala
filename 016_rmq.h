@@ -7,7 +7,6 @@
 #define INFOARENA_ARHIVA_EDUCATIONALA_016_RMQ_H
 
 #include <fstream>
-#include <iostream>
 #include <vector>
 #include <cmath>
 

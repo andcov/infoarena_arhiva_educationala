@@ -7,7 +7,6 @@
 #define INFOARENA_ARHIVA_EDUCATIONALA_026_APM_H
 
 #include <fstream>
-#include <iostream>
 #include <unordered_map>
 #include <unordered_set>
 #include <vector>

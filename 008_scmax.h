@@ -7,13 +7,9 @@
 #define INFOARENA_ARHIVA_EDUCATIONALA_008_SCMAX_H
 
 #include <fstream>
-#include <iostream>
 #include <vector>
 #include <cmath>
 
-#include <fstream>
-#include <iostream>
-#include <vector>
 
 #define INPUT "scmax.in"
 #define OUTPUT "scmax.out"

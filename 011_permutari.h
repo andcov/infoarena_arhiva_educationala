@@ -8,7 +8,6 @@
 #define INFOARENA_ARHIVA_EDUCATIONALA_011_PERMUTARI_H
 
 #include <fstream>
-#include <iostream>
 #include <vector>
 
 //#define INPUT "permutari.in"
