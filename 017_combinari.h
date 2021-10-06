@@ -1,4 +1,3 @@
-#include <climits>
 //
 // Created by Andrei Covaci on 23.09.2021.
 // https://infoarena.ro/problema/combinari
@@ -10,6 +9,7 @@
 #include <fstream>
 #include <iostream>
 #include <vector>
+#include <climits>
 
 //#define INPUT "combinari.in"
 //#define OUTPUT "combinari.out"
@@ -31,11 +31,12 @@ pair<vector<int>, int> read() {
     }
 
     in.close();
-    return pair<vector<int>, int>(res, 1);
+    return {res, 1};
 }
 
+ofstream out(OUTPUT);
+
 int solve(pair<vector<int>, int> x) {
-    ofstream out(OUTPUT);
 
     vector<int> v = x.first;
     int pos = x.second;
@@ -61,11 +62,11 @@ int solve(pair<vector<int>, int> x) {
         swap(v[i], v[pos]);
     }
 
-    out.close();
     return 0;
 }
 
 void print(__unused int c) {
+    out.close();
 }
 
 #endif //INFOARENA_ARHIVA_EDUCATIONALA_017_COMBINARI_H
