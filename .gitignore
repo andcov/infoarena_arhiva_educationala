@@ -12,3 +12,4 @@ _deps
 infoarena_arhiva_educationala
 infoarena_arhiva_educationala.cbp
 .idea/
+cmake-build-debug/
