@@ -15,7 +15,9 @@ Problems included:
  - [x] [014 - Parcurgere DFS - componente conexe](https://infoarena.ro/problema/dfs)
  - [ ] [016 - Range minimum query](https://infoarena.ro/problema/rmq)
  - [x] [017 - Combinari](https://infoarena.ro/problema/combinari)
+ - [x] [022 - Paduri de multimi disjuncte](https://infoarena.ro/problema/disjoint)
  - [x] [025 - Heapuri](https://infoarena.ro/problema/heapuri)
+ - [x] [026 - Arbore partial de cost minim](https://infoarena.ro/problema/apm)
  - [ ] [058 - Diametrul unui arbore](https://infoarena.ro/problema/darb)
 
 ## Prerequisites
