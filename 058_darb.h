@@ -1,4 +1,3 @@
-#include <climits>
 //
 // Created by Andrei Covaci on 29.09.2021.
 // https://infoarena.ro/problema/darb
@@ -11,6 +10,7 @@
 #include <fstream>
 #include <vector>
 #include <unordered_map>
+#include <climits>
 
 using namespace std;
 
@@ -81,5 +81,72 @@ void print(int res) {
 
     out.close();
 }
+
+
+/*
+#include <fstream>
+#include <iostream>
+#include <unordered_map>
+#include <unordered_set>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+//#define INPUT "darb.in"
+//#define OUTPUT "darb.out"
+#define INPUT "input.in"
+#define OUTPUT "output.out"
+
+int maxg;
+unordered_map<int, unordered_set<int>> adj;
+
+int read() {
+    ifstream in(INPUT);
+
+    int a, b, n;
+
+    in >> n;
+    n--;
+    for(; n; --n) {
+        in >> a >> b;
+        adj[a].insert(b);
+        adj[b].insert(a);
+    }
+
+    in.close();
+    return a;
+}
+
+int solve(int n) {
+    int max1 = 0, max2 = 0, temp;
+    for(int c : adj[n]) {
+        adj[c].erase(n);
+
+        temp = solve(c);
+
+        if (temp > max1) {
+            max2 = max1;
+            max1 = temp;
+        } else if (temp > max2) {
+            max2 = temp;
+        }
+    }
+
+    maxg = max(maxg, max1 + max2 + 1);
+
+    return max1 + 1;
+}
+
+void print(int res) {
+    ofstream out(OUTPUT);
+
+    res = max(res, maxg);
+    out << res;
+
+    out.close();
+}
+
+*/
 
 #endif //INFOARENA_ARHIVA_EDUCATIONALA_058_DARB_H
