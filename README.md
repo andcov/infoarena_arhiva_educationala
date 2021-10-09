@@ -18,7 +18,7 @@ Problems included:
  - [x] [022 - Paduri de multimi disjuncte](https://infoarena.ro/problema/disjoint) - [Solution](https://github.com/andcov/infoarena_arhiva_educationala/blob/master/022_disjoint.h)
  - [x] [025 - Heapuri](https://infoarena.ro/problema/heapuri) - [Solution](https://github.com/andcov/infoarena_arhiva_educationala/blob/master/025_heapuri.h)
  - [x] [026 - Arbore partial de cost minim](https://infoarena.ro/problema/apm) - [Solution](https://github.com/andcov/infoarena_arhiva_educationala/blob/master/026_apm.h)
- - [ ] [Problema rucsacului](https://infoarena.ro/problema/rucsac) - [Solution](https://github.com/andcov/infoarena_arhiva_educationala/blob/master/051_rucsac.h)
+ - [x] [051 - Problema rucsacului](https://infoarena.ro/problema/rucsac) - [Solution](https://github.com/andcov/infoarena_arhiva_educationala/blob/master/051_rucsac.h)
  - [ ] [058 - Diametrul unui arbore](https://infoarena.ro/problema/darb) - [Solution](https://github.com/andcov/infoarena_arhiva_educationala/blob/master/058_darb.h)
 
 ## Prerequisites
