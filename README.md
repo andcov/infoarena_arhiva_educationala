@@ -22,7 +22,7 @@ Problems included:
  - [x] [058 - Diametrul unui arbore](https://infoarena.ro/problema/darb) - [Solution](https://github.com/andcov/infoarena_arhiva_educationala/blob/master/058_darb.h)
 
 ## Prerequisites
-You must have a C++ compiler and CMake installed. If you do not, you will not be able to run the project, but you may still see the solutions (e.g. look at `001_cmlsc.h` for the solution for [001 - Cel mai lung subsir comun](https://infoarena.ro/problema/cmlsc)). 
+You must have a C++ compiler installed, and alternatively CMake (you may compile the project without CMake). If you do not, you will not be able to run the project, but you may still see the solutions (e.g. look at `001_cmlsc.h` for the solution for [001 - Cel mai lung subsir comun](https://infoarena.ro/problema/cmlsc)). 
 
 ## Installation & Usage
  * Clone this repo: `git clone https://github.com/andcov/infoarena_arhiva_educationala.git && cd infoarena_arhiva_educationala`
