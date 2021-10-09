@@ -19,7 +19,7 @@ Problems included:
  - [x] [025 - Heapuri](https://infoarena.ro/problema/heapuri) - [Solution](https://github.com/andcov/infoarena_arhiva_educationala/blob/master/025_heapuri.h)
  - [x] [026 - Arbore partial de cost minim](https://infoarena.ro/problema/apm) - [Solution](https://github.com/andcov/infoarena_arhiva_educationala/blob/master/026_apm.h)
  - [x] [051 - Problema rucsacului](https://infoarena.ro/problema/rucsac) - [Solution](https://github.com/andcov/infoarena_arhiva_educationala/blob/master/051_rucsac.h)
- - [ ] [058 - Diametrul unui arbore](https://infoarena.ro/problema/darb) - [Solution](https://github.com/andcov/infoarena_arhiva_educationala/blob/master/058_darb.h)
+ - [x] [058 - Diametrul unui arbore](https://infoarena.ro/problema/darb) - [Solution](https://github.com/andcov/infoarena_arhiva_educationala/blob/master/058_darb.h)
 
 ## Prerequisites
 You must have a C++ compiler and CMake installed. If you do not, you will not be able to run the project, but you may still see the solutions (e.g. look at `001_cmlsc.h` for the solution for [001 - Cel mai lung subsir comun](https://infoarena.ro/problema/cmlsc)). 
