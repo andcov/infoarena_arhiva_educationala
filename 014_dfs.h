@@ -1,7 +1,16 @@
-//
-// Created by Andrei Covaci on 22.09.2021.
-// https://infoarena.ro/problema/dfs
-//
+/**
+Created by Andrei Covaci on 22.09.2021.
+https://infoarena.ro/problema/dfs
+
+IN:
+6 3
+1 2
+1 4
+3 5
+
+OUT:
+3
+**/
 
 #ifndef INFOARENA_ARHIVA_EDUCATIONALA_014_DFS_H
 #define INFOARENA_ARHIVA_EDUCATIONALA_014_DFS_H
@@ -43,7 +52,7 @@ vector<vector<int>> read() {
 
 
 
-int solve(vector<vector<int>>& list) {
+int solve_dfs(vector<vector<int>>& list) {
     vector<bool> visited;
     visited.reserve(list.size());
     for(int i = 0; i < list.size(); ++i) {
@@ -81,6 +90,12 @@ void print(int c) {
     out << c;
 
     out.close();
+}
+
+void solve() {
+    auto in = read();
+    auto out = solve_dfs(in);
+    print(out);
 }
 
 #endif //INFOARENA_ARHIVA_EDUCATIONALA_014_DFS_H

@@ -1,7 +1,19 @@
-//
-// Created by Andrei Covaci on 09.10.2021.
-// https://infoarena.ro/problema/rucsac
-//
+/**
+Created by Andrei Covaci on 09.10.2021.
+https://infoarena.ro/problema/rucsac
+
+IN:
+6 10
+3 7
+3 4
+1 2
+1 9
+2 4
+1 5
+
+OUT:
+29
+**/
 
 #ifndef INFOARENA_ARHIVA_EDUCATIONALA_051_RUCSAC_H
 #define INFOARENA_ARHIVA_EDUCATIONALA_051_RUCSAC_H
@@ -24,7 +36,7 @@ int din0[10001];
 int din1[10001];
 vector<pair<usi, usi>> items;
 
-int read() {
+void read() {
     ifstream in(INPUT);
 
     int w, p;
@@ -37,10 +49,9 @@ int read() {
     }
 
     in.close();
-    return 0;
 }
 
-int solve(int _) {
+int solve_rucsac() {
     bool zero = true;
     for(int j = 1; j <= n; ++j) {
         for(int i = 1; i <= maxw; ++i) {
@@ -67,6 +78,12 @@ void print(int res) {
     out << res;
 
     out.close();
+}
+
+void solve() {
+    read();
+    auto out = solve_rucsac();
+    print(out);
 }
 
 #endif //INFOARENA_ARHIVA_EDUCATIONALA_051_RUCSAC_H

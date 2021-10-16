@@ -1,7 +1,21 @@
-//
-// Created by Andrei Covaci on 06.10.2021.
-// https://infoarena.ro/problema/disjoint
-//
+/**
+Created by Andrei Covaci on 06.10.2021.
+https://infoarena.ro/problema/disjoint
+
+IN:
+4 6
+1 1 2
+1 3 4
+2 1 3
+2 1 2
+1 1 3
+2 1 4
+
+OUT:
+NU
+DA
+DA
+**/
 
 #ifndef INFOARENA_ARHIVA_EDUCATIONALA_022_DISJOINT_H
 #define INFOARENA_ARHIVA_EDUCATIONALA_022_DISJOINT_H
@@ -54,7 +68,7 @@ void unite(int x, int y) {
     dis[find(x)] = y;
 }
 
-vector<bool> solve(vector<tuple<int, int, int>>& ins) {
+vector<bool> solve_disjoint(vector<tuple<int, int, int>>& ins) {
     vector<bool> res;
 
     init();
@@ -85,6 +99,12 @@ void print(vector<bool>& res) {
     }
 
     out.close();
+}
+
+void solve() {
+    auto in = read();
+    auto out = solve_disjoint(in);
+    print(out);
 }
 
 #endif //INFOARENA_ARHIVA_EDUCATIONALA_022_DISJOINT_H

@@ -1,7 +1,36 @@
-//
-// Created by Andrei Covaci on 06.10.2021.
-// https://infoarena.ro/problema/apm
-//
+/**
+Created by Andrei Covaci on 06.10.2021.
+https://infoarena.ro/problema/apm
+
+IN:
+9 14
+1 2 10
+1 3 -11
+2 4 11
+2 5 11
+5 6 13
+3 4 10
+4 6 12
+4 7 5
+3 7 4
+3 8 5
+8 7 5
+8 9 4
+9 7 3
+6 7 11
+
+OUT:
+37
+8
+3 1
+7 9
+7 3
+9 8
+7 4
+2 1
+5 2
+7 6
+**/
 
 #ifndef INFOARENA_ARHIVA_EDUCATIONALA_026_APM_H
 #define INFOARENA_ARHIVA_EDUCATIONALA_026_APM_H
@@ -42,7 +71,7 @@ public:
 unordered_map<int, vector<Edge>> adj;
 unordered_map<int, vector<int>> res_adj;
 
-int read() {
+void read() {
     ifstream in(INPUT);
 
     int n, m, a, b, w;
@@ -55,10 +84,9 @@ int read() {
     }
 
     in.close();
-    return a;
 }
 
-pair<int, int> solve(int _a) {
+pair<int, int> solve_apm() {
     priority_queue<Edge, vector<Edge>, greater<>> heap;
     int curr_node = 1;
     int res_cost = 0, res_edges = 0;
@@ -103,6 +131,12 @@ void print(pair<int, int> res) {
     }
 
     out.close();
+}
+
+void solve() {
+    read();
+    auto out = solve_apm();
+    print(out);
 }
 
 

@@ -1,7 +1,13 @@
-//
-// Created by Andrei Covaci on 22.09.2021.
-// https://infoarena.ro/problema/lgput
-//
+/**
+Created by Andrei Covaci on 22.09.2021.
+https://infoarena.ro/problema/lgput
+
+IN:
+2 4
+
+OUT:
+16
+**/
 
 #ifndef INFOARENA_ARHIVA_EDUCATIONALA_012_LGPUT_H
 #define INFOARENA_ARHIVA_EDUCATIONALA_012_LGPUT_H
@@ -26,9 +32,7 @@ pair<long long, int> read() {
     return make_pair(a, b);
 }
 
-
-
-long long solve(pair<long long, int> p) {
+long long solve_lgput(pair<long long, int> p) {
     long long base = p.first;
     int exp = p.second;
     int m = 1999999973;
@@ -39,9 +43,9 @@ long long solve(pair<long long, int> p) {
         return base % m;
 
     if (exp % 2 == 0)
-        return solve(pair<long long, int>((base % m) * (base % m), exp / 2)) % m;
+        return solve_lgput(pair<long long, int>((base % m) * (base % m), exp / 2)) % m;
     else
-        return (base % m) * solve(pair<long long, int>((base % m) * (base % m), (exp - 1) / 2)) % m;
+        return (base % m) * solve_lgput(pair<long long, int>((base % m) * (base % m), (exp - 1) / 2)) % m;
 }
 
 void print(long long n) {
@@ -52,12 +56,10 @@ void print(long long n) {
     out.close();
 }
 
-int main() {
+void solve() {
     auto nums = read();
-    auto res = solve(nums);
+    auto res = solve_lgput(nums);
     print(res);
-
-    return 0;
 }
 
 #endif //INFOARENA_ARHIVA_EDUCATIONALA_012_LGPUT_H

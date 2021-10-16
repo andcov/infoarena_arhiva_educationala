@@ -1,14 +1,22 @@
-//
-// Created by Andrei Covaci on 23.09.2021.
-// https://infoarena.ro/problema/combinari
-//
+/**
+Created by Andrei Covaci on 23.09.2021.
+https://infoarena.ro/problema/combinari
+
+IN:
+4 3
+
+OUT:
+1 2 3
+1 2 4
+1 3 4
+2 3 4
+**/
 
 #ifndef INFOARENA_ARHIVA_EDUCATIONALA_017_COMBINARI_H
 #define INFOARENA_ARHIVA_EDUCATIONALA_017_COMBINARI_H
 
 #include <fstream>
 #include <vector>
-#include <climits>
 
 //#define INPUT "combinari.in"
 //#define OUTPUT "combinari.out"
@@ -35,7 +43,7 @@ pair<vector<int>, int> read() {
 
 ofstream out(OUTPUT);
 
-int solve(pair<vector<int>, int> x) {
+void solve_combinari(pair<vector<int>, int> x) {
 
     vector<int> v = x.first;
     int pos = x.second;
@@ -56,16 +64,15 @@ int solve(pair<vector<int>, int> x) {
             continue;
         }
 
-        solve(pair<vector<int>, int>(v, pos + 1));
+        solve_combinari(pair<vector<int>, int>(v, pos + 1));
 
         swap(v[i], v[pos]);
     }
-
-    return 0;
 }
 
-void print(__unused int c) {
-    out.close();
+void solve() {
+    auto in = read();
+    solve_combinari(in);
 }
 
 #endif //INFOARENA_ARHIVA_EDUCATIONALA_017_COMBINARI_H

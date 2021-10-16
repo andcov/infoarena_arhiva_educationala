@@ -1,7 +1,24 @@
-//
-// Created by Andrei Covaci on 29.09.2021.
-// https://infoarena.ro/problema/heapuri
-//
+/**
+Created by Andrei Covaci on 29.09.2021.
+https://infoarena.ro/problema/heapuri
+
+IN:
+9
+1 4
+1 7
+1 9
+3
+1 2
+2 1
+3
+2 4
+3
+
+OUT:
+4
+2
+7
+**/
 
 #ifndef INFOARENA_ARHIVA_EDUCATIONALA_025_HEAPURI_H
 #define INFOARENA_ARHIVA_EDUCATIONALA_025_HEAPURI_H
@@ -10,7 +27,6 @@
 #include <vector>
 #include <unordered_set>
 #include <cmath>
-#include <climits>
 
 //#define INPUT "heapuri.in"
 //#define OUTPUT "heapuri.out"
@@ -103,11 +119,7 @@ void remove_top() {
 //    }
 //}
 
-int read() {
-    return 0;
-}
-
-vector<int> solve(__unused int w) {
+vector<int> solve_heapuri() {
     ifstream in(INPUT);
 
     vector<int> res, hist;
@@ -146,6 +158,11 @@ void print(vector<int>& res) {
     }
 
     out.close();
+}
+
+void solve() {
+    auto out = solve_heapuri();
+    print(out);
 }
 
 #endif //INFOARENA_ARHIVA_EDUCATIONALA_025_HEAPURI_H

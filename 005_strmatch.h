@@ -1,7 +1,15 @@
-//
-// Created by Andrei Covaci on 05.09.2021.
-// https://infoarena.ro/problema/strmatch
-//
+/**
+Created by Andrei Covaci on 05.09.2021.
+https://infoarena.ro/problema/strmatch
+
+IN:
+ABA
+CABBCABABAB
+
+OUT:
+2
+5 7
+**/
 
 #ifndef INFOARENA_ARHIVA_EDUCATIONALA_005_STRMATCH_H
 #define INFOARENA_ARHIVA_EDUCATIONALA_005_STRMATCH_H
@@ -68,7 +76,7 @@ void calc_offsets(int size) {
     }
 }
 
-vector<int> solve(pair<string, string>& strings) {
+vector<int> solve_strmatch(pair<string, string>& strings) {
     string pattern = strings.first, s = strings.second;
 
     if(pattern.size() > s.size()) {
@@ -107,6 +115,12 @@ void print(vector<int>& res) {
     }
 
     out.close();
+}
+
+void solve() {
+    auto in = read();
+    auto out = solve_strmatch(in);
+    print(out);
 }
 
 #endif //INFOARENA_ARHIVA_EDUCATIONALA_005_STRMATCH_H

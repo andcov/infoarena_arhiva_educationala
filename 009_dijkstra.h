@@ -1,7 +1,19 @@
-//
-// Created by Andrei Covaci on 09.09.2021.
-// https://infoarena.ro/problema/dijkstra
-//
+/**
+Created by Andrei Covaci on 09.09.2021.
+https://infoarena.ro/problema/dijkstra
+
+IN:
+5 6
+1 2 1
+1 4 2
+4 3 4
+2 3 2
+4 5 3
+3 5 6
+
+OUT:
+1 3 2 5
+**/
 
 #ifndef INFOARENA_ARHIVA_EDUCATIONALA_009_DIJKSTRA_H
 #define INFOARENA_ARHIVA_EDUCATIONALA_009_DIJKSTRA_H
@@ -67,7 +79,7 @@ unordered_map<int, vector<Edge>> read() {
     return create_adj_list(res);
 }
 
-unordered_map<int, int> solve(unordered_map<int, vector<Edge>>& adj_list) {
+unordered_map<int, int> solve_dijkstra(unordered_map<int, vector<Edge>>& adj_list) {
     priority_queue <Edge, vector<Edge>, greater<> > heap;
 
     for(auto e : adj_list[1]) {
@@ -101,6 +113,12 @@ void print(unordered_map<int, int>& res) {
     }
 
     out.close();
+}
+
+void solve() {
+    auto in = read();
+    auto out = solve_dijkstra(in);
+    print(out);
 }
 
 #endif //INFOARENA_ARHIVA_EDUCATIONALA_009_DIJKSTRA_H

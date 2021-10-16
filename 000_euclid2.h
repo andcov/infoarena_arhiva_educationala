@@ -1,7 +1,18 @@
-//
-// Created by Andrei Covaci on 04.09.2021.
-// https://infoarena.ro/problema/euclid2
-//
+/**
+Created by Andrei Covaci on 04.09.2021.
+https://infoarena.ro/problema/euclid2
+
+IN:
+3
+12 42
+21 7
+9 10
+
+OUT:
+6
+7
+1
+**/
 
 #ifndef INFOARENA_ARHIVA_EDUCATIONALA_MAIN_H
 #define INFOARENA_ARHIVA_EDUCATIONALA_MAIN_H
@@ -30,7 +41,7 @@ vector<pair<int, int>> read() {
     return nums;
 }
 
-vector<int> solve(vector<pair<int, int>>& nums) {
+vector<int> solve_euclid(vector<pair<int, int>>& nums) {
     vector<int> res;
     for(auto pair : nums) {
         int a = pair.first, b = pair.second;
@@ -54,5 +65,11 @@ void print(vector<int>& res) {
     for(auto r : res) {
         out << r << '\n';
     }
+}
+
+void solve() {
+    auto in = read();
+    auto out = solve_euclid(in);
+    print(out);
 }
 #endif //INFOARENA_ARHIVA_EDUCATIONALA_MAIN_H

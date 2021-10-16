@@ -1,7 +1,23 @@
-//
-// Created by Andrei Covaci on 29.09.2021.
-// https://infoarena.ro/problema/darb
-//
+/**
+Created by Andrei Covaci on 29.09.2021.
+https://infoarena.ro/problema/darb
+
+IN:
+11
+1 2
+1 3
+1 4
+2 5
+3 6
+4 7
+5 8
+5 9
+6 10
+10 11
+
+OUT:
+8
+**/
 
 #ifndef INFOARENA_ARHIVA_EDUCATIONALA_058_DARB_H
 #define INFOARENA_ARHIVA_EDUCATIONALA_058_DARB_H
@@ -23,7 +39,7 @@ bool vis1[100001];
 bool vis2[100001];
 int last;
 
-int read() {
+void read() {
     ifstream in(INPUT);
 
     int a, b, n;
@@ -38,7 +54,6 @@ int read() {
     }
 
     in.close();
-    return 0;
 }
 
 
@@ -92,7 +107,7 @@ void bfs2(int n) {
     }
 }
 
-int solve(int _) {
+int solve_darb() {
     bfs1(1);
     bfs2(last);
 
@@ -105,6 +120,12 @@ inline void print(int res) {
     out << res;
 
     out.close();
+}
+
+void solve() {
+    read();
+    auto out = solve_darb();
+    print(out);
 }
 
 #endif //INFOARENA_ARHIVA_EDUCATIONALA_058_DARB_H

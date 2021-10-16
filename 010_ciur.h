@@ -1,7 +1,13 @@
-//
-// Created by Andrei Covaci on 09.09.2021.
-// https://infoarena.ro/problema/ciur
-//
+/**
+Created by Andrei Covaci on 09.09.2021.
+https://infoarena.ro/problema/ciur
+
+IN:
+10
+
+OUT:
+4
+**/
 
 #ifndef INFOARENA_ARHIVA_EDUCATIONALA_010_CIUR_H
 #define INFOARENA_ARHIVA_EDUCATIONALA_010_CIUR_H
@@ -26,7 +32,7 @@ int read() {
     return n;
 }
 
-int solve(int n) {
+int solve_ciur(int n) {
     bool era[n + 1];
     for(int i = 3; i <= n; ++i) {
         era[i] = i % 2 != 0;
@@ -52,6 +58,12 @@ void print(int n) {
     out << n;
 
     out.close();
+}
+
+void solve() {
+    auto in = read();
+    auto out = solve_ciur(in);
+    print(out);
 }
 
 #endif //INFOARENA_ARHIVA_EDUCATIONALA_010_CIUR_H

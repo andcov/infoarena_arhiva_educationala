@@ -1,8 +1,18 @@
-#include <climits>
-//
-// Created by Andrei Covaci on 21.09.2021.
-// https://infoarena.ro/problema/permutari
-//
+/**
+Created by Andrei Covaci on 21.09.2021.
+https://infoarena.ro/problema/permutari
+
+IN:
+3
+
+OUT:
+1 2 3
+1 3 2
+2 1 3
+2 3 1
+3 1 2
+3 2 1
+**/
 
 #ifndef INFOARENA_ARHIVA_EDUCATIONALA_011_PERMUTARI_H
 #define INFOARENA_ARHIVA_EDUCATIONALA_011_PERMUTARI_H
@@ -50,7 +60,7 @@ void reverse(vector<int>& vec, int first) {
     }
 }
 
-int solve(int n) {
+void solve_permutari(int n) {
     ofstream out(OUTPUT);
 
     vector<int> base;
@@ -78,10 +88,11 @@ int solve(int n) {
     }
 
     out.close();
-    return 0;
 }
 
-void print(__unused int n) {
+void solve() {
+    auto in = read();
+    solve_permutari(in);
 }
 
 #endif //INFOARENA_ARHIVA_EDUCATIONALA_011_PERMUTARI_H

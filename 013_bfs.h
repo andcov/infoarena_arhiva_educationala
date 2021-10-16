@@ -1,7 +1,20 @@
-//
-// Created by Andrei Covaci on 22.09.2021.
-// https://infoarena.ro/problema/bfs
-//
+/**
+Created by Andrei Covaci on 22.09.2021.
+https://infoarena.ro/problema/bfs
+
+IN:
+5 7 2
+1 2
+2 1
+2 2
+3 2
+2 5
+5 3
+4 5
+
+OUT:
+1 0 2 -1 1
+**/
 
 #ifndef INFOARENA_ARHIVA_EDUCATIONALA_013_BFS_H
 #define INFOARENA_ARHIVA_EDUCATIONALA_013_BFS_H
@@ -40,7 +53,7 @@ pair<vector<vector<int> >, int> read() {
 
 
 
-vector<int> solve(pair<vector<vector<int> >, int>& plist) {
+vector<int> solve_bfs(pair<vector<vector<int>>, int>& plist) {
     auto list = plist.first;
     int s = plist.second;
     queue<pair<int, int> > q;
@@ -85,6 +98,12 @@ void print(vector<int>& l) {
     }
 
     out.close();
+}
+
+void solve() {
+    auto in = read();
+    auto out = solve_bfs(in);
+    print(out);
 }
 
 #endif //INFOARENA_ARHIVA_EDUCATIONALA_013_BFS_H

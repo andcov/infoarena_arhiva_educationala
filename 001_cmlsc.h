@@ -1,7 +1,16 @@
-//
-// Created by Andrei Covaci on 04.09.2021.
-// https://infoarena.ro/problema/cmlsc
-//
+/**
+Created by Andrei Covaci on 04.09.2021.
+https://infoarena.ro/problema/cmlsc
+
+IN:
+5 3
+1 7 3 9 8
+7 5 8
+
+OUT:
+2
+7 8
+**/
 
 #ifndef INFOARENA_ARHIVA_EDUCATIONALA_001_CMLSC_H
 #define INFOARENA_ARHIVA_EDUCATIONALA_001_CMLSC_H
@@ -36,7 +45,7 @@ pair<vector<int>, vector<int>> read() {
     return pair<vector<int>, vector<int>>(a, b);
 }
 
-stack<int> solve(pair<vector<int>, vector<int>>& rows) {
+stack<int> solve_cmlsc(pair<vector<int>, vector<int>>& rows) {
     vector<int> a = rows.first, b = rows.second;
 
 
@@ -92,6 +101,12 @@ void print(stack<int>& res) {
     }
 
     out.close();
+}
+
+void solve() {
+    auto in = read();
+    auto out = solve_cmlsc(in);
+    print(out);
 }
 
 #endif //INFOARENA_ARHIVA_EDUCATIONALA_001_CMLSC_H

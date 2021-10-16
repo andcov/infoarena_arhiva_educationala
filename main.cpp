@@ -1,15 +1,9 @@
-//
-// Created by Andrei Covaci on 03.09.2021.
-//
-
-#include "025_heapuri.h"
+#include "000_euclid2.h"
 
 using namespace std;
 
 int main() {
-    auto in = read();
-    auto out = solve(in);
-    print(out);
+    solve();
 
     return 0;
 }
