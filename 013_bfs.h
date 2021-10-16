@@ -48,7 +48,7 @@ pair<vector<vector<int> >, int> read() {
     }
 
     in.close();
-    return pair<vector<vector<int> >, int>(list, --s);
+    return {list, --s};
 }
 
 

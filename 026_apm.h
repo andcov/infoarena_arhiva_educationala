@@ -123,7 +123,7 @@ void print(pair<int, int> res) {
 
     unordered_set<int> used;
 
-    for(auto e : res_adj) {
+    for(auto& e : res_adj) {
         used.insert(e.first);
         for(auto h : e.second) {
             if(!used.count(h)) out << e.first << ' ' << h << '\n';

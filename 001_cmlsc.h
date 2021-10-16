@@ -42,7 +42,7 @@ pair<vector<int>, vector<int>> read() {
     }
 
     in.close();
-    return pair<vector<int>, vector<int>>(a, b);
+    return {a, b};
 }
 
 stack<int> solve_cmlsc(pair<vector<int>, vector<int>>& rows) {

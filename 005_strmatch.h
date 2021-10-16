@@ -80,7 +80,7 @@ vector<int> solve_strmatch(pair<string, string>& strings) {
     string pattern = strings.first, s = strings.second;
 
     if(pattern.size() > s.size()) {
-        return vector<int>();
+        return {};
     }
 
     calc_offsets(pattern.size());
