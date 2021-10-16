@@ -1,105 +1,98 @@
-//
-// Created by Andrei Covaci on 07.09.2021.
-// https://infoarena.ro/problema/scmax
-//
+/**
+Created by Andrei Covaci on 07.09.2021.
+https://infoarena.ro/problema/scmax
+
+IN:
+5
+24 12 15 15 19
+
+OUT:
+3
+12 15 19
+**/
 
 #ifndef INFOARENA_ARHIVA_EDUCATIONALA_008_SCMAX_H
 #define INFOARENA_ARHIVA_EDUCATIONALA_008_SCMAX_H
 
 #include <fstream>
-#include <vector>
-#include <cmath>
-
-
-#define INPUT "scmax.in"
-#define OUTPUT "scmax.out"
-//#define INPUT "input.in"
-//#define OUTPUT "output.out"
+#include <stack>
 
 using namespace std;
 
-vector<int> read() {
+//#define INPUT "scmax.in"
+//#define OUTPUT "scmax.out"
+#define INPUT "input.in"
+#define OUTPUT "output.out"
+
+
+int n, m;
+int vec[100001], pos[100001], ins_pos[100001];
+
+/// Return the position of the
+/// greatest number smaller than the given `val`
+int binary_search(int start, int end, int val) {
+    if (start == end) return start;
+
+    int mid = (start + end) / 2;
+    if (pos[mid] == val) return mid;
+
+    if (pos[mid] > val) {
+        return binary_search(start, mid, val);
+    }
+    return binary_search(mid + 1, end, val);
+}
+
+void read() {
     ifstream in(INPUT);
 
-    int n, aux;
     in >> n;
-
-    vector<int> v;
-    v.reserve(n);
-    for(; n; --n) {
-        in >> aux;
-        v.push_back(aux);
+    for(int i = 0; i < n; ++i) {
+        in >> vec[i];
     }
 
     in.close();
-    return v;
 }
 
-int binary_search(vector<int>& vec, int s, int e, int el) {
-    if(s == e) {
-        if (vec[s] < el) {
-            return s + 1;
-        }
-        return s;
-    }
-
-    int m = (s + e) / 2;
-    if(vec[m] < el) {
-        return binary_search(vec, m + 1, e, el);
-    }
-    return binary_search(vec, s, m, el);
-
-}
-
-vector<int> solve(vector<int>& vec) {
-    int n = vec.size(), m, j;
-    vector<int> cap, ins;
-    cap.reserve(n);
-    ins.reserve(n);
-
-    cap[1] = vec[0];
-    ins[0] = 1;
-    m = 2;
+void solve_scmax() {
+    pos[0] = vec[0];
+    m = 1;
 
     for(int i = 1; i < n; ++i) {
-        j = binary_search(cap, 1, m - 1, vec[i]);
-
-        if(j == m && cap[j] < vec[i]) {
-            cap[m] = vec[i];
-            ins[i] = m;
+        int bs = binary_search(0, m, vec[i]);
+        pos[bs] = vec[i];
+        ins_pos[i] = bs;
+        if (bs == m && vec[i] > pos[m - 1])
             ++m;
-            continue;
-        }
-
-        cap[j] = vec[i];
-        ins[i] = j;
     }
-
-    vector<int> res;
-    res.reserve(m - 1);
-    int curr = m - 1;
-    j = n;
-    while(j > 0) {
-        if (ins[j] == curr) {
-            --curr;
-            res.push_back(vec[j]);
-        }
-        --j;
-    }
-
-    return res;
 }
 
-void print(vector<int>& res) {
+void print() {
     ofstream out(OUTPUT);
 
-    out << res.size() << '\n';
-
-    for(int i = res.size() - 1; i >= 0; --i) {
-        out << res[i] << ' ';
+    stack<int> res;
+    out << m << '\n';
+    --m;
+    --n;
+    while(n >= 0) {
+        if(ins_pos[n] == m) {
+            res.push(vec[n]);
+            --m;
+        }
+        --n;
+    }
+    while(!res.empty()) {
+        out << res.top() << ' ';
+        res.pop();
     }
 
     out.close();
+}
+
+int solve() {
+    read();
+    solve_scmax();
+    print();
+    return 0;
 }
 
 #endif //INFOARENA_ARHIVA_EDUCATIONALA_008_SCMAX_H

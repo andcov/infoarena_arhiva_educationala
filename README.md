@@ -6,7 +6,7 @@ Problems included:
  - [x] [000 - Algoritmul lui Euclid](https://infoarena.ro/problema/euclid2) - [Solution](https://github.com/andcov/infoarena_arhiva_educationala/blob/master/000_euclid2.h)
  - [x] [001 - Cel mai lung subsir comun](https://infoarena.ro/problema/cmlsc) - [Solution](https://github.com/andcov/infoarena_arhiva_educationala/blob/master/001_cmlsc.h)
  - [x] [005 - Potrivirea sirurilor](https://infoarena.ro/problema/strmatch) - [Solution](https://github.com/andcov/infoarena_arhiva_educationala/blob/master/005_strmatch.h)
- - [ ] [008 - Subsir crescator maximal](https://infoarena.ro/problema/scmax) - [Solution](https://github.com/andcov/infoarena_arhiva_educationala/blob/master/008_scmax.h)
+ - [x] [008 - Subsir crescator maximal](https://infoarena.ro/problema/scmax) - [Solution](https://github.com/andcov/infoarena_arhiva_educationala/blob/master/008_scmax.h)
  - [x] [009 - Algoritmul lui Dijkstra](https://infoarena.ro/problema/dijkstra) - [Solution](https://github.com/andcov/infoarena_arhiva_educationala/blob/master/009_dijkstra.h)
  - [x] [010 - Ciurul lui Eratosthenes](https://infoarena.ro/problema/ciur) - [Solution](https://github.com/andcov/infoarena_arhiva_educationala/blob/master/010_ciur.h)
  - [x] [011 - Generare de permutari](https://infoarena.ro/problema/permutari) - [Solution](https://github.com/andcov/infoarena_arhiva_educationala/blob/master/011_permutari.h)
