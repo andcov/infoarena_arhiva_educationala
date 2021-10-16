@@ -13,7 +13,7 @@ Problems included:
  - [x] [012 - Ridicare la putere in timp logaritmic](https://infoarena.ro/problema/lgput) - [Solution](https://github.com/andcov/infoarena_arhiva_educationala/blob/master/012_lgput.h)
  - [x] [013 - BFS - Parcurgere in latime](https://infoarena.ro/problema/bfs) - [Solution](https://github.com/andcov/infoarena_arhiva_educationala/blob/master/013_bfs.h)
  - [x] [014 - Parcurgere DFS - componente conexe](https://infoarena.ro/problema/dfs) - [Solution](https://github.com/andcov/infoarena_arhiva_educationala/blob/master/014_dfs.h)
- - [ ] [016 - Range minimum query](https://infoarena.ro/problema/rmq) - [Solution](https://github.com/andcov/infoarena_arhiva_educationala/blob/master/016_rmq.h)
+ - [x] [016 - Range minimum query](https://infoarena.ro/problema/rmq) - [Solution](https://github.com/andcov/infoarena_arhiva_educationala/blob/master/016_rmq.h)
  - [x] [017 - Combinari](https://infoarena.ro/problema/combinari) - [Solution](https://github.com/andcov/infoarena_arhiva_educationala/blob/master/017_combinari.h)
  - [x] [022 - Paduri de multimi disjuncte](https://infoarena.ro/problema/disjoint) - [Solution](https://github.com/andcov/infoarena_arhiva_educationala/blob/master/022_disjoint.h)
  - [x] [025 - Heapuri](https://infoarena.ro/problema/heapuri) - [Solution](https://github.com/andcov/infoarena_arhiva_educationala/blob/master/025_heapuri.h)

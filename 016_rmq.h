@@ -1,13 +1,30 @@
-//
-// Created by Andrei Covaci on 29.09.2021.
-// https://infoarena.ro/problema/rmq
-//
+/**
+Created by Andrei Covaci on 29.09.2021.
+https://infoarena.ro/problema/rmq
+
+IN:
+5 4
+1
+5
+6
+4
+3
+2 4
+1 2
+3 5
+1 4
+
+OUT:
+4
+1
+3
+1
+**/
 
 #ifndef INFOARENA_ARHIVA_EDUCATIONALA_016_RMQ_H
 #define INFOARENA_ARHIVA_EDUCATIONALA_016_RMQ_H
 
 #include <fstream>
-#include <vector>
 #include <cmath>
 
 //#define INPUT "rmq.in"
@@ -17,80 +34,61 @@
 
 using namespace std;
 
-int n, m, pre[20][100001];
+int pre[19][100001];
 
-pair<vector<int>, vector<pair<int, int>>> read() {
-    ifstream in(INPUT);
+int find_min(int start, int end) {
+    int len = end - start + 1;
 
-    in >> n >> m;
+    if(len == 1) return pre[0][start];
 
-    int a, b;
-    vector<int> vals;
-    vals.reserve(n);
-    for(int i = 0; i < n; ++i) {
-        in >> a;
-        vals.emplace_back(a);
+    int pow = floor(log2(len));
+    if ((len & (len - 1)) == 0) {
+        return pre[pow][start];
     }
 
-    vector<pair<int, int>> ques;
-    ques.reserve(m);
-    for(int i = 0; i < m; ++i) {
+    while(len & len - 1) {
+        len = len & len - 1;
+    }
+
+    return min(pre[pow][start], pre[pow][end - len + 1]);
+}
+
+void compute_pre(int n) {
+    for(int j = 1; j <= ceil(log2(n)); ++j) {
+        int len = 1 << (j - 1);
+        for(int i = 0; i < n; ++i) {
+            pre[j][i] = (i + len < n) ? min(pre[j - 1][i], pre[j - 1][i + len]) : pre[j - 1][i];
+        }
+    }
+}
+
+void read() {
+    ifstream in(INPUT);
+    ofstream out(OUTPUT);
+
+    int n, q;
+    in >> n >> q;
+
+    for(int i = 0; i < n; ++i) {
+        in >> pre[0][i];
+    }
+
+    compute_pre(n);
+
+    int a, b;
+    for(; q; --q) {
         in >> a >> b;
-        ques.emplace_back(--a, --b);
+        --a; --b;
+        out << find_min(a, b) << '\n';
     }
 
     in.close();
-    return make_pair(vals, ques);
-}
-
-int find_min(int a, int b, int minv) {
-    int len = b - a + 1;
-    int log_len = (int) log2(len);
-    int len_pow = 1 << log_len;
-
-    if (len_pow == len) {
-        return pre[log_len][a];
-    } else {
-        int cmp = find_min(a + len_pow, b, minv);
-        return min(min(cmp, minv), pre[log_len][a]);
-    }
-}
-
-vector<int> solve(pair<vector<int>, vector<pair<int, int>>>& in) {
-    auto vals = in.first;
-    auto ques = in.second;
-
-    for(int i = 0; i < n; ++i) {
-        pre[0][i] = vals[i];
-    }
-
-    int level = 1, two = 2;
-    while(two / 2 < n) {
-        for(int i = 0; i < n; ++i) {
-            pre[level][i] = (i + two / 2 >= n) ? pre[level - 1][i] : min(pre[level - 1][i], pre[level - 1][i + two / 2]);
-        }
-        ++level;
-        two = two << 1;
-
-    }
-
-    vector<int> res;
-    res.reserve(m);
-    for(int i = 0; i < m; ++i) {
-        res.push_back(find_min(ques[i].first, ques[i].second, 100001));
-    }
-
-    return res;
-}
-
-void print(vector<int>& res) {
-    ofstream out(OUTPUT);
-
-    for(auto e : res) {
-        out << e << '\n';
-    }
-
     out.close();
+}
+
+int solve() {
+    read();
+    return 0;
 }
 
 #endif //INFOARENA_ARHIVA_EDUCATIONALA_016_RMQ_H
